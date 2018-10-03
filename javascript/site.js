@@ -17,8 +17,8 @@ var sortData = function (d1, d2) {
     return 0;
 };
 
-var blue = '#007CE0';
-var blueLight = '#72B0E0';
+var blueLight = '#3A63B4';
+// var blueLight = '#72B0E0';
 
 function generateSectorCharts(data,chartID) {
 	var chart = dc.rowChart('#'+chartID+'');
@@ -28,8 +28,12 @@ function generateSectorCharts(data,chartID) {
 	var dim = cf.dimension(function(d){
 		return d.indicateur;
 	});
-
 	var group  = dim.group().reduceSum(function(d){ return d.valeur;});
+
+	// row tip
+    var rowtip = d3.tip().attr('class', 'd3-tip').html(function (d) {
+        return d.key + ': ' + d3.format('0,000')(d.value);
+    });
 
 	chart
 		  .width(350)
@@ -44,6 +48,8 @@ function generateSectorCharts(data,chartID) {
 		  .xAxis().ticks(4);
 
 	dc.renderAll();
+	d3.selectAll('g.row').call(rowtip);
+    d3.selectAll('g.row').on('mouseover', rowtip.show).on('mouseout', rowtip.hide);
 } //generateSectorCharts
 
 // Get the data from hxl proxy
