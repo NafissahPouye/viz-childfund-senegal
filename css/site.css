@@ -41,6 +41,11 @@ hr{
     width:100%;
 }
 
+.kf {
+  /*text-decoration: underline;*/
+  color: #2965AA;
+}
+
 .mapSection{
   padding-top: 80px;
 }
@@ -51,10 +56,10 @@ hr{
   margin: 0 auto;
 }
 
-.description{
+/*.description{
   font-size: 14px;
   text-align: justify;
-}
+}*/
 
 .dc-chart g.row text {
     dominant-baseline: middle;

@@ -17,8 +17,8 @@ var sortData = function (d1, d2) {
     return 0;
 };
 
-var blueLight = '#3A63B4';
-// var blueLight = '#72B0E0';
+var blueLight = '#2965AA';
+// var blueLight = '#72B0E0';2965AA
 
 function generateSectorCharts(data,chartID) {
 	var chart = dc.rowChart('#'+chartID+'');
